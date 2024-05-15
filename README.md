@@ -32,20 +32,54 @@ For more information on using dev containers see this [tutorial](https://atlas-j
 
 ### Resources:
 
+- [State: a components memory](https://react.dev/learn/state-a-components-memory)
+- [Passing Data Deeply with Context](https://react.dev/learn/passing-data-deeply-with-context)
+
 ### Learning Objectives:
+
+- React Hooks
+- useState
+- useEffect
+- Context Providers
 
 ### Tasks
 
 #### Fetch Data with API
 
-#### Pagination
-
-#### Sorting
+- Load data using fetch to call `http://localhost:3000/api/courses.json`
+- Utilize the `useEffect` hook
+- Render a row in the table for each object returned
 
 #### Filtering
 
+- Typing in the search input field should filter the table rows to only shows rows that contain the text in the search field.
+- The filtering should be case insensitive.
+
+#### Sorting
+
+- Click the column heading should sort the rows by that columnin ascending order.
+- Click the same column a second time should change the ordering to descencing order.
+
+#### Pagination
+
+- Limit the data show in the table to 10 rows at a time
+- Clickng the Next button should change the table to show the next 10 results.
+- Clicking the Previous button should change the abled to show the previous 10 results.
+- Disable the next button if on the first page of results.
+- Disable the previous button if on the last page of results.
+- You will need to utilize the state hook to keep track of which page you are on.
+
 #### Enroll in Course
+
+- Create a context provider in the App component that tracks enrolled courses.
+- When a user clicks the enroll button, that course should be added to the enrolled courses in the context.
+- Enrolled courses shouls show in the class schedule table
 
 #### Drop Course
 
+- When a user clicks the drop button, that course should be removed from the enrolled courses in the context.
+- The course should no longer appear in the call schedule table
+
 #### Course Count
+
+- The course count in the header should reflect the correct number of courses in the class schedule table.
