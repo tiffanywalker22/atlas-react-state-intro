@@ -21,9 +21,7 @@ For more information on using dev containers see this [tutorial](https://atlas-j
 - `index.html`: This is the html file that appears when the dev server starts up.
 - `src`: All javascript/jsx code goes in this directory
 - `src/assets`: Any static assets such as images that are loaded through the javascript files goes here.
-- `src/header.jsx`: The header at the top of the page contains the logo and enrolled course count.
-- `src/school-catalog.jsx`: The table that lists all of the available courses.
-- `src/class-schedule.jsx`: The table that lists all of the enrolled courses.
+- `src/app.jsx`: The is the main app component for the entire app.
 
 ### Important Commands
 
@@ -36,6 +34,7 @@ For more information on using dev containers see this [tutorial](https://atlas-j
 ### Resources:
 
 - [State: a components memory](https://react.dev/learn/state-a-components-memory)
+- [Synchronizing with effects](https://react.dev/learn/synchronizing-with-effects)
 - [Passing Data Deeply with Context](https://react.dev/learn/passing-data-deeply-with-context)
 
 ### Learning Objectives:
