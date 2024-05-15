@@ -8,7 +8,7 @@
 
 ### Dev Container
 
-There is a dev container preconfigured with Node 21 on alpine linux. If you would like to use the dev container:
+There is a dev container preconfigured with Node 20 on linux. If you would like to use the dev container:
 
 - Install the [Dev Containers Plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) for VS Code
 - Open the command pallet (Cntrl / Command + Shift + P) in VS Code
@@ -18,9 +18,12 @@ For more information on using dev containers see this [tutorial](https://atlas-j
 
 ### Important Files/Folders
 
+- `index.html`: This is the html file that appears when the dev server starts up.
 - `src`: All javascript/jsx code goes in this directory
 - `src/assets`: Any static assets such as images that are loaded through the javascript files goes here.
-- `index.html`: This is the html file that appears when the dev server starts up.
+- `src/header.jsx`: The header at the top of the page contains the logo and enrolled course count.
+- `src/school-catalog.jsx`: The table that lists all of the available courses.
+- `src/class-schedule.jsx`: The table that lists all of the enrolled courses.
 
 ### Important Commands
 
@@ -52,19 +55,21 @@ For more information on using dev containers see this [tutorial](https://atlas-j
 
 #### Filtering
 
-- Typing in the search input field should filter the table rows to only shows rows that contain the text in the search field.
+- Typing in the search input field should filter the table rows to only show rows that contain the text in the search field.
 - The filtering should be case insensitive.
+- You will need to utilize the state hook to keep track of the filter.
 
 #### Sorting
 
-- Click the column heading should sort the rows by that columnin ascending order.
-- Click the same column a second time should change the ordering to descencing order.
+- Clicking the column heading should sort the rows by that column in ascending order.
+- Clicking the same column a second time should change the ordering to descencing order.
+- You will need to utilize state hooks to keep track of which column the data is sorted by and the sort direction.
 
 #### Pagination
 
-- Limit the data show in the table to 10 rows at a time
+- Limit the data shown in the table to 10 rows at a time
 - Clickng the Next button should change the table to show the next 10 results.
-- Clicking the Previous button should change the abled to show the previous 10 results.
+- Clicking the Previous button should change the table to show the previous 10 results.
 - Disable the next button if on the first page of results.
 - Disable the previous button if on the last page of results.
 - You will need to utilize the state hook to keep track of which page you are on.
@@ -73,7 +78,7 @@ For more information on using dev containers see this [tutorial](https://atlas-j
 
 - Create a context provider in the App component that tracks enrolled courses.
 - When a user clicks the enroll button, that course should be added to the enrolled courses in the context.
-- Enrolled courses shouls show in the class schedule table
+- Enrolled courses shoulds show in the class schedule table
 
 #### Drop Course
 
