@@ -4,7 +4,7 @@
 
 - Run `npm install` to install dependencies
 - Run `npm run dev` to start the dev server
-- Open `http://localhost:3000` in a browser
+- Open `http://localhost:5173` in a browser
 
 ### Dev Container
 
@@ -25,7 +25,7 @@ For more information on using dev containers see this [tutorial](https://atlas-j
 
 ### Important Commands
 
-- `npm run dev`: Starts dev server with Hot Module Reloading on port 3000. Anytime a file changes, the changes will automatocally be reflected in the browser
+- `npm run dev`: Starts dev server with Hot Module Reloading on port 5173. Anytime a file changes, the changes will automatocally be reflected in the browser
 - `npm run lint`: Run the lint checker with eslint to check for known linting issues
 - `npm run format`: Run prettier to automatically reformat files
 
@@ -48,7 +48,7 @@ For more information on using dev containers see this [tutorial](https://atlas-j
 
 #### Fetch Data with API
 
-- Load data using fetch to call `http://localhost:3000/api/courses.json`
+- Load data using fetch to call `/api/courses.json`
 - Utilize the `useEffect` hook
 - Render a row in the table for each object returned
 
