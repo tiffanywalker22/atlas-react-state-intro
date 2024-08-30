@@ -27,10 +27,11 @@ export default function SchoolCatalog() {
     return sortableItems;
   }, [courses, sortCatalog]);
   
-  const searchableCourses = courses.filter(course =>
+  const searchableCourses = React.useMemo(() =>
+    sortableCourses.filter(course =>
     course.courseNumber.toLowerCase().includes(query.toLowerCase()) ||
     course.courseName.toLowerCase().includes(query.toLowerCase())
-  );
+  ), [sortableCourses, query]);
 
   const updateSort = (key) => {
     let direction = 'ascending';
