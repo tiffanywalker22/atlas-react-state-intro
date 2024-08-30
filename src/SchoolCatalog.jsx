@@ -4,6 +4,8 @@ export default function SchoolCatalog() {
   const [courses, updateCourses] = useState([]);
   const [query, setQuery] = useState("");
   const [sortCatalog, setSortCatalog] = useState({ key: null, direction: 'ascending'});
+  const [currentPage, setCurrentPage] = useState(1);
+  const dataPerPage = 5;
 
   useEffect(()=> {
     fetch('/api/courses.json')
@@ -33,12 +35,25 @@ export default function SchoolCatalog() {
     course.courseName.toLowerCase().includes(query.toLowerCase())
   ), [sortableCourses, query]);
 
+  const paginatedCourses = React.useMemo(() => {
+    const startIndex = (currentPage -1) * dataPerPage;
+    return searchableCourses.slice(startIndex, startIndex + dataPerPage);
+  }, [searchableCourses, currentPage]);
+
   const updateSort = (key) => {
     let direction = 'ascending';
     if (sortCatalog.key === key && sortCatalog.direction === 'ascending') {
       direction = 'descending';
     }
     setSortCatalog({ key, direction });
+  };
+
+  const previousPage =() => {
+    if (currentPage > 1) setCurrentPage(currentPage -1);
+  };
+
+  const nextPage = () => {
+    if (currentPage * dataPerPage < searchableCourses.length) setCurrentPage(currentPage + 1);
   };
   
   return (
@@ -72,8 +87,8 @@ export default function SchoolCatalog() {
         </tbody>
       </table>
       <div className="pagination">
-        <button>Previous</button>
-        <button>Next</button>
+        <button onClick={previousPage} disabled={currentPage === 1}>Previous</button>
+        <button onClick={nextPage} disabled={currentPage * dataPerPage >= searchableCourses.length}>Next</button>
       </div>
     </div>
   );
