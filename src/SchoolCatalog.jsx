@@ -72,7 +72,7 @@ export default function SchoolCatalog() {
           </tr>
         </thead>
         <tbody>
-          {searchableCourses.map((course, index) => (
+          {paginatedCourses.map((course, index) => (
             <tr key={index}>
               <td>{course.trimester}</td>
               <td>{course.courseNumber}</td>
