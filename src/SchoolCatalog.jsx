@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useEnrollment } from './EnrollmentContext';
 
 export default function SchoolCatalog() {
   const [courses, updateCourses] = useState([]);
@@ -6,6 +7,7 @@ export default function SchoolCatalog() {
   const [sortCatalog, setSortCatalog] = useState({ key: null, direction: 'ascending'});
   const [currentPage, setCurrentPage] = useState(1);
   const dataPerPage = 5;
+  const { enrollCourse } = useEnrollment();
 
   useEffect(()=> {
     fetch('/api/courses.json')
@@ -80,7 +82,7 @@ export default function SchoolCatalog() {
               <td>{course.semesterCredits}</td>
               <td>{course.totalClockHours}</td>
               <td>
-              <button>Enroll</button>
+              <button onClick={() => enrollCourse(course)}>Enroll</button>
             </td>
             </tr>
           ))}
