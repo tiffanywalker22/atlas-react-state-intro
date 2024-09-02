@@ -4,7 +4,7 @@ const EnrollmentContext = createContext();
 
 export const useEnrollment = () => useContext(EnrollmentContext);
 
-export default function EnrollmentProvider({ children }) {
+export function EnrollmentProvider({ children }) {
     const [selectedCourses, setSelectedCourses] = useState ([]);
 
     const enrollCourse = (course) => {
